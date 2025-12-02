@@ -1,15 +1,13 @@
-package com.gomoku.tests;
+package com.gomoku.service;
 
 import com.gomoku.model.*;
-import com.gomoku.service.GameService;
-import com.gomoku.service.RandomAiStrategy;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GameServiceTest {
 
     @Test
-    public void testHorizontalWin() {
+    public void testHorizontalWinBlack() {
         Board b = new Board(5,5);
         for (int c=0;c<5;c++) b.place(2,c,CellState.BLACK);
         GameService gs = new GameService(b, new RandomAiStrategy());
@@ -17,7 +15,7 @@ public class GameServiceTest {
     }
 
     @Test
-    public void testVerticalWin() {
+    public void testVerticalWinWhite() {
         Board b = new Board(6,6);
         for (int r=1;r<=5;r++) b.place(r,3,CellState.WHITE);
         GameService gs = new GameService(b, new RandomAiStrategy());
@@ -33,7 +31,7 @@ public class GameServiceTest {
     }
 
     @Test
-    public void testNoWinAndInProgress() {
+    public void testNoWinInProgress() {
         Board b = new Board(5,5);
         b.place(0,0,CellState.BLACK);
         b.place(0,1,CellState.WHITE);
@@ -42,7 +40,7 @@ public class GameServiceTest {
     }
 
     @Test
-    public void testAvailableMovesEmptyDraw() {
+    public void testDraw() {
         Board b = new Board(1,1);
         b.place(0,0,CellState.BLACK);
         GameService gs = new GameService(b, new RandomAiStrategy());
@@ -58,5 +56,26 @@ public class GameServiceTest {
         GameService gs = new GameService(b, new RandomAiStrategy());
         assertEquals(3, gs.countLine(0,0,0,1,CellState.BLACK));
     }
-}
 
+    @Test
+    public void testHumanMoveAndAiMoveIntegration() {
+        Board b = new Board(5,5);
+        GameService gs = new GameService(b, new RandomAiStrategy());
+        assertTrue(gs.humanMove(0,0));
+        assertEquals(CellState.BLACK, b.get(0,0));
+        // Now AI's turn
+        Move aiMove = gs.aiMove();
+        if (aiMove != null) {
+            assertEquals(CellState.WHITE, b.get(aiMove.row(), aiMove.col()));
+        }
+    }
+
+    @Test
+    public void testInvalidMoves() {
+        Board b = new Board(5,5);
+        GameService gs = new GameService(b, new RandomAiStrategy());
+        assertFalse(gs.humanMove(5,5)); // out of bounds
+        assertTrue(gs.humanMove(0,0));
+        assertFalse(gs.humanMove(0,0)); // occupied
+    }
+}

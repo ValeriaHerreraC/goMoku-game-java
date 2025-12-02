@@ -1,0 +1,9 @@
+2025-12-02 00:00:09 INFO  com.gomoku.service.GameService - Human moved at 7,7
+2025-12-02 00:00:09 INFO  com.gomoku.app.Main - Human moved 7 7
+2025-12-02 00:00:09 INFO  com.gomoku.service.GameService - AI moved at 2,6
+2025-12-02 00:00:09 INFO  com.gomoku.app.Main - AI moved
+2025-12-02 00:01:10 INFO  com.gomoku.app.Main - Saved game 1 result=IN_PROGRESS moves=B:8,8;W:3,7
+2025-12-02 01:10:35 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-02 01:10:35 INFO  com.gomoku.service.GameService - AI moved at 3,4
+2025-12-02 01:10:35 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-02 01:10:35 WARN  com.gomoku.service.GameService - Attempted human move when not human's turn

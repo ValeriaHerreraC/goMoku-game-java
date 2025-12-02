@@ -1,0 +1,16 @@
+2025-12-01 23:40:29 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:40:29 INFO  com.gomoku.service.GameService - AI moved at 1,0
+2025-12-01 23:40:29 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:40:29 WARN  com.gomoku.service.GameService - Attempted human move when not human's turn
+2025-12-01 23:56:12 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:56:12 INFO  com.gomoku.service.GameService - AI moved at 3,2
+2025-12-01 23:56:12 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:56:12 WARN  com.gomoku.service.GameService - Attempted human move when not human's turn
+2025-12-01 23:58:00 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:58:00 INFO  com.gomoku.service.GameService - AI moved at 2,1
+2025-12-01 23:58:00 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:58:00 WARN  com.gomoku.service.GameService - Attempted human move when not human's turn
+2025-12-01 23:58:26 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:58:26 INFO  com.gomoku.service.GameService - AI moved at 2,1
+2025-12-01 23:58:26 INFO  com.gomoku.service.GameService - Human moved at 0,0
+2025-12-01 23:58:26 WARN  com.gomoku.service.GameService - Attempted human move when not human's turn

@@ -1,10 +1,10 @@
 package com.gomoku.model;
 
 /**
- * Estado de una celda del tablero.
+ * State of a single cell on the board.
  */
 public enum CellState {
     EMPTY,
-    BLACK, // humano
-    WHITE  // máquina
+    BLACK, // Human
+    WHITE  // AI
 }
