@@ -26,9 +26,6 @@ src/
 └── service # JUnit tests
 pom.xml
 
-yaml
-Copy code
-
 ---
 
 ## ▶️ Running the Game
@@ -38,8 +35,6 @@ Copy code
 ```bash
 mvn clean install
 2. Run the application
-bash
-Copy code
 mvn exec:java -Dexec.mainClass="com.gomoku.app.Main"
 Or run Main.java in IntelliJ IDEA.
 
@@ -53,8 +48,6 @@ save	Saves the current game state
 exit	Exit the game
 
 Example session:
-markdown
-Copy code
 > show
 > move 8 8
 Move accepted
@@ -75,8 +68,6 @@ Falls back to random selection if needed.
 
 Both strategies use the Strategy Pattern:
 
-java
-Copy code
 public interface AiStrategy {
     Move chooseMove(Board board);
 }
@@ -90,8 +81,6 @@ saved_game – serialized board states
 
 Data access is handled with the DAO pattern, e.g.:
 
-java
-Copy code
 GameStats stats = statsDao.load();
 stats.incrementGamesPlayed();
 statsDao.save(stats);
@@ -110,8 +99,6 @@ Service logic
 
 Run all tests with:
 
-bash
-Copy code
 mvn test
 🧱 Design Patterns Used
 Pattern	Used In	Purpose
@@ -124,8 +111,6 @@ Logging uses SLF4J + Logback.
 
 Modify the config in:
 
-css
-Copy code
 src/main/resources/logback.xml
 ✔ Completed Features
 Playable Gomoku on 15×15 board
